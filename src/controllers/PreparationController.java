@@ -64,7 +64,7 @@ public class PreparationController implements Initializable {
 	// Press Add Ingredient Button and open Ingredient Input View
 	@FXML
     void addIngredient(ActionEvent event) {
-		secondStage = Main.openSecondStage("/views/IngredientInput.fxml");
+		secondStage = Main.openSecondStage("/views/IngredientInput.fxml", 600, 350);
     }
 	
 	

@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
 public class Operation {
 	private IntegerProperty index;  // Index of the operation
 	private StringProperty content;  // Content of the operation
-	private IntegerProperty interval;  // Milliseconds from last operation
+	private IntegerProperty interval;  // Seconds from last operation
 	private IntegerProperty displayTime;  // Milliseconds of content display
 
 	public Operation() {

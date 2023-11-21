@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	static Stage primaryStage;
+	public static Stage primaryStage;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -40,13 +40,13 @@ public class Main extends Application {
 	}
 	
 	// Open a second stage
-	public static Stage openSecondStage(String resource) {  
+	public static Stage openSecondStage(String resource, int width, int height) {  
 		Stage secondStage = new Stage();
         try {
 			Parent root = FXMLLoader.load(Main.class.getResource(resource));
 			Scene scene = new Scene(root);
-			secondStage.setWidth(600);
-			secondStage.setHeight(350);
+			secondStage.setWidth(width);
+			secondStage.setHeight(height);
 			secondStage.setScene(scene);
 			secondStage.show();
 		} catch(Exception e) {

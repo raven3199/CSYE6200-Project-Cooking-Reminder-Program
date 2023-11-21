@@ -55,7 +55,7 @@ public class IngredientInputController implements Initializable {
     
     // Information input completed, submit it
     @FXML
-    void submit(ActionEvent event) {
+    private void submit(ActionEvent event) {
     	String name = ingredientName.getText();
     	double amount = Double.parseDouble(ingredientAmount.getText());
     	String unit = ingredientUnit.getValue();
@@ -71,7 +71,7 @@ public class IngredientInputController implements Initializable {
 
 	
 	// Get the unit value in the ChoiceBox
-	public String getUnit(ActionEvent event) {
+	private String getUnit(ActionEvent event) {
 	    String unit = ingredientUnit.getValue();
 	    return unit;
 	}

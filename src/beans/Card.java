@@ -18,21 +18,21 @@ import javafx.scene.text.FontWeight;
 
 public class Card extends StackPane {
 
-    public Card(int index, String content, String interval, int displayTime) {
+    public Card(Operation operation) {
         Rectangle cardBackground = new Rectangle(200, 150);
         cardBackground.setArcHeight(20);
         cardBackground.setArcWidth(20);
         cardBackground.setFill(Color.LIGHTGRAY);
         
         // The label of the index of the card
-        Label indexLabel = new Label(String.valueOf(index));        
+        Label indexLabel = new Label(String.valueOf(operation.getIndex()));        
         indexLabel.setFont(Font.font("Arial", FontWeight.BOLD, 30));
         
         
         // The content of the card, including operation, interval and display time
-        HBox contentBox = makeLabel("Content", content);
-        HBox intervalBox = makeLabel("Interval", interval);
-        HBox displayTimeBox = makeLabel("Display Time", String.valueOf(displayTime));
+        HBox contentBox = makeLabel("Content", operation.getContent());
+        HBox intervalBox = makeLabel("Interval", String.valueOf(operation.getInterval()));
+        HBox displayTimeBox = makeLabel("Display Time", String.valueOf(operation.getDisplayTime()));
 
         VBox operationContainer = new VBox();
         operationContainer.setSpacing(30);
