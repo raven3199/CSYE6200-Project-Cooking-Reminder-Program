@@ -3,9 +3,9 @@ package org.kessoku_band.csye6200project;
 import java.util.ArrayList;
 
 public interface InputAndOutput {
-	public void readInput();
+	public int readInput();
 	
-	public void writeOutput();
+	public int writeOutput();
 
 	public void removeMenu(String name);
 

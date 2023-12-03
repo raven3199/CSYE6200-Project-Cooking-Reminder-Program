@@ -39,6 +39,8 @@ public class OperationInputController implements Initializable {
     final private String[] display_choices = {"10s", "30s", "1min"};
     
     public static Operation operation_entered;
+    
+    public static int comeFrom;  // 0 represents from operation controller, 1 represents from card
 
     @FXML
     void submit(ActionEvent event) throws IOException {
@@ -66,7 +68,14 @@ public class OperationInputController implements Initializable {
     	operation.setDisplayTime(displayTime);
     	
     	operation_entered = operation;
-    	OperationController.submitCompleted();
+    	System.out.println("Come From: " + comeFrom);
+    	if(comeFrom==0) {
+    		OperationController.submitCompleted();
+    	} else if(comeFrom==1) {
+    		OperationController.modifyCompleted();
+    		System.out.println("Modify");
+    	}
+    	
     }
 
 	@Override
@@ -81,5 +90,9 @@ public class OperationInputController implements Initializable {
 		String choice = display_time_choice.getValue();
 		return choice;
 	}
+	
+	
+	
+	
 }
 

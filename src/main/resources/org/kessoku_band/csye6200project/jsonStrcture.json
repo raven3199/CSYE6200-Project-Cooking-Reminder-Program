@@ -1,0 +1,15 @@
+{
+ "menu_chain":[
+   {"menu_name" : "Menu_name_Here!",
+     "Operation": [
+       {"index": 1, "content": "index","interval": 1,"displayTime": 1},
+       {"index": 2, "content": "index","interval": 2,"displayTime": 2}
+     ]£¬ 
+"Ingredients": [
+       {"index": 1, "amount": "index","interval": 1},
+       {"index": 2, "amount": "index","interval": 1},
+     ]
+
+   }
+ ]
+}

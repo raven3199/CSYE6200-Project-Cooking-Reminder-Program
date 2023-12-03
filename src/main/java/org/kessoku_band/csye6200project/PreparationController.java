@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -42,10 +42,9 @@ public class PreparationController implements Initializable {
     @FXML
     private TableColumn<Ingredient, String> unitColumn;
     
-    private static ObservableList<Ingredient> ingredients;
+    public static ObservableList<Ingredient> ingredients;
     
     public static Stage secondStage;
-    
     
 
 	@Override
@@ -78,6 +77,7 @@ public class PreparationController implements Initializable {
 	// Go to next page: Operation View
 	@FXML
     void goOperation(ActionEvent event) throws IOException {
-		Main.switchView("Operation.fxml");
+		Scene scene = OperationController.buildScene();
+		Main.switchViewWithScene(scene);
     }
 }
