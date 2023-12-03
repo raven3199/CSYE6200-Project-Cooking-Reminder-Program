@@ -59,7 +59,6 @@ public class Card extends StackPane {
         HBox buttonBox = new HBox();
         Button modifyButton = makeButton("Modify_Icon.png");
         Button cancalButton = makeButton("Cancal_Icon.png");
-        Button startButton = makeButton("start.png");
         modifyButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -68,19 +67,7 @@ public class Card extends StackPane {
 				System.out.println("Index: "+ index);
 			}
 		});
-        startButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				try {
-					ExecuteController.start(MenuSelectionController.menu_list.get(index).getOperations());
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("start Index: "+ index);
-			}
-		});
+       
         cancalButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -91,7 +78,7 @@ public class Card extends StackPane {
 		});
         
         buttonBox.setSpacing(30);
-        buttonBox.getChildren().addAll(modifyButton, cancalButton,startButton);
+        buttonBox.getChildren().addAll(modifyButton, cancalButton);
         buttonBox.setAlignment(Pos.CENTER);
         
         
@@ -109,7 +96,7 @@ public class Card extends StackPane {
         ColumnConstraints col1 = new ColumnConstraints();
         col1.setPercentWidth(8); 
         ColumnConstraints col2 = new ColumnConstraints();
-        col2.setPercentWidth(40); 
+        col2.setPercentWidth(20); 
         ColumnConstraints col3 = new ColumnConstraints();
         col3.setPercentWidth(8); 
         cardGrid.getColumnConstraints().addAll(col1, col2, col3);
@@ -198,7 +185,7 @@ public class Card extends StackPane {
 		});
         
         buttonBox.setSpacing(30);
-        buttonBox.getChildren().addAll(modifyButton, cancalButton,startButton);
+        buttonBox.getChildren().addAll(cancalButton,startButton);
         buttonBox.setAlignment(Pos.CENTER);
         
         
