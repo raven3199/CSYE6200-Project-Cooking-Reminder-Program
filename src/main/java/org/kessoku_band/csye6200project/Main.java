@@ -11,8 +11,12 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	public static String IOPath = "D:\\source.json";
 	public static Stage primaryStage;
+	//Json file IO
 	public static InputAndOutput r_w_Object = new JsonReaderWriter();
+	// Mysql database IO
+	//public static InputAndOutput r_w_Object = new MysqlReaderWriter();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -25,6 +29,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Cooking Reminder Program");
 			primaryStage.setScene(scene);
+			Main.setFullScreen();
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

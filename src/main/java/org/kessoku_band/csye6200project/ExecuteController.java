@@ -131,6 +131,17 @@ void Nextstep(ActionEvent event) {
 		stepcontent.setText(operations.get(index-1).getContent());
 		System.out.println(operations.get(index-1).getContent());
 	}
+	
+	if(index == operations.size()) {
+		timeline.stop();
+		try {
+			this.showConfirmationDialog();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }
 
@@ -152,7 +163,7 @@ public void showConfirmationDialog() throws Exception {
     alert.setContentText("Back To Home？");
 
     Optional<ButtonType> result = alert.showAndWait();
-    if (result.isPresent() && result.get() == ButtonType.OK) {
+    if (result.isPresent() || result.get() == ButtonType.OK) {
     	Main.switchView("Start.fxml");
     }
 }

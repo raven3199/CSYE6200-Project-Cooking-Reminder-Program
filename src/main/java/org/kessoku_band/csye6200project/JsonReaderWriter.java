@@ -22,7 +22,7 @@ public class JsonReaderWriter implements InputAndOutput{
 	public int readInput() {
 		JSONParser parser = new JSONParser();
 		try {
-			Object object = parser.parse(new FileReader("D:\\testout.json"));
+			Object object = parser.parse(new FileReader(Main.IOPath));
 			JSONObject jsonObject = (JSONObject)object;
 
 			// get menu_chain
@@ -92,7 +92,7 @@ public class JsonReaderWriter implements InputAndOutput{
 		}
 		menu_chain.put("menu_chain", menu_array);
 		try {
-			FileWriter file = new FileWriter("D:\\testout.json");
+			FileWriter file = new FileWriter("Main.IOPath");
 			file.write(menu_chain.toJSONString());
 			file.close();
 		} catch (IOException e) {

@@ -16,6 +16,7 @@ public class MysqlReaderWriter implements InputAndOutput{
 		this.url = "jdbc:mysql://localhost:3306/csye6200project";
 		this.user = "root";
 		this.password = "rootroot";
+		
 		this.menuList = new ArrayList<Menu>();
 		this.new_menuList = new ArrayList<Menu>();
 

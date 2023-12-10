@@ -95,7 +95,8 @@ public class MenuSelectionController {
 	
 	// Delete corresponding card
 	public static void deleteCard(int index) {
-		menu_list.remove(index);
+		//menu_list.remove(index);
+		Main.r_w_Object.removeMenu(menu_list.get(index).getName());
 		card_list.remove(index);
 		contentBox.getChildren().remove(index + 1);
 		Main.r_w_Object.writeOutput();
